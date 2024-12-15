@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Admin Dashboard - OneLastBit</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ url_for('home') }}">OneLastBit</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('customer_profile') }}">Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2 class="text-primary">Admin Dashboard</h2>
+        
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Manage Users</h5>
+                <p>Here you can view and manage all registered users.</p>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>User ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                        <tr>
+                            <td>{{ user.id }}</td>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>
+                                <a href="{{ url_for('edit_user', user_id=user.id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="{{ url_for('delete_user', user_id=user.id) }}" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="4" class="text-center">No users found.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">View Reports</h5>
+                <p>Access detailed reports on electricity usage and billing.</p>
+                <a href="{{ url_for('view_reports') }}" class="btn btn-info">View Reports</a>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Notifications</h5>
+                <p>Manage notifications for users regarding their accounts.</p>
+                <a href="{{ url_for('manage_notifications') }}" class="btn btn-secondary">Manage Notifications</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center py-3">
+        <p>&copy; 2023 OneLastBit. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

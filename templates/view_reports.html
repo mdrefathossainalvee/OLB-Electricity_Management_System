@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>View Reports - OneLastBit</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ url_for('home') }}">OneLastBit</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('customer_profile') }}">Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Reports</h2>
+        <p>Here you can view detailed reports on electricity usage and billing.</p>
+        <!-- Example report table -->
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Report ID</th>
+                    <th>Report Date</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for report in reports %}
+                <tr>
+                    <td>{{ report.id }}</td>
+                    <td>{{ report.date }}</td>
+                    <td>{{ report.description }}</td>
+                    <td>
+                        <a href="{{ url_for('download_report', report_id=report.id) }}" class="btn btn-info btn-sm">Download</a>
+                    </td>
+                </tr>
+                {% else %}
+                <tr

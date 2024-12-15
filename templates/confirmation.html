@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation</title>
+    <script>
+        // Redirect to home page after 5 seconds
+        setTimeout(function() {
+            window.location.href = "{{ url_for('home') }}";
+        }, 5000);
+    </script>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 class="text-success">Success!</h2>
+        <p>Your sign up has completed! You will receive a confirmation message very soon.</p>
+        <p>Redirecting to the home page in 5 seconds...</p>
+    </div>
+</body>
+</html>
