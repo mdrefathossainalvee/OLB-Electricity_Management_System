@@ -1,7 +1,7 @@
 # README
 
 ## Owner Information
-This project is owned by **Md. Refat Hossain Alvee**. All rights reserved. For any inquiries regarding the project, please contact [your-email@example.com](mailto:your-email@example.com).
+This project is owned by **Md. Refat Hossain Alvee**. All rights reserved. For any inquiries regarding the project, please contact [refathossain@engineer.com](mailto:refathossain@engineer.com).
 
 ## Copyright License
 This project is protected under the Bangladesh Copyright Act, 2000. The copyright owner holds exclusive rights to the original work, including the right to reproduce, distribute, and display the work.
