@@ -19,7 +19,7 @@ Unauthorized use of the work constitutes copyright infringement and may result i
 
 ## Contact Information
 For further information regarding the copyright and licensing of this project, please contact:
-- **Email**: [your-email@example.com](mailto:your-email@example.com)
+- **Email**: [your-refathossain@engineer.com](mailto:refathossain@engineer.com)
 - **Portfolio**: [mrhalvee.live](https://mrhalvee.live)
 
 ## Acknowledgments
